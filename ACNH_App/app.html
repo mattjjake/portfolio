@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACNHC Apps</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/default-styles.css"/>
+  <script src="src/init.js" type="module"></script>
+
+</head>
+<body>
+  <ac-nav id="nav" data-here="Application"></ac-nav>
+
+  <ac-header id="header" class="title has-text-weight-light" data-name="Felyne" 
+  data-quote="I think comic books and video games are… COOL."></ac-header>
+
+  <!-- product info -->
+  <section class="section">
+    <div class="container" style="min-height: 100vh;">
+            <h1 class="is-size-1 title">Apps</h1>
+            <p style="margin: 20px 10px;"> 
+              Select a fish from the dropdown to see where it lives.
+            </p>
+            <div class="columns">
+
+              <div class="column">
+                <select id="creature-select" style="margin: 5px;"></select>
+                <button id="search" class="button" style="margin: 0px 10px; background-color: rgb(76, 197, 150);">Search Fish</button>
+              </div>
+           
+              <div class="column">
+                <select id="location-select" style="margin: 5px;">
+                  <option value="none" selected disabled hidden>&lt;Choose a Location&gt;</option>
+                  <option value="River">River</option>
+                  <option value="Pond">Pond</option>
+                  <option value="Sea">Sea</option>
+                  <option value="Special">Special</option>
+                </select>
+                <button id="search-loc" class="button" style="margin: 0px 10px; background-color: rgb(76, 197, 150);">Search Location</button>
+              </div>
+              <div class="column">
+                <select id="month-select" style="margin: 5px;">
+                  <option value="none" selected disabled hidden>&lt;Choose a Month&gt;</option>
+                  <option value="1">January</option>
+                  <option value="2">Febuary</option>
+                  <option value="3">March</option>
+                  <option value="4">April</option>
+                  <option value="5">May</option>
+                  <option value="6">June</option>
+                  <option value="7">July</option>
+                  <option value="8">August</option>
+                  <option value="9">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
+                <button id="month-search" class="button" style="margin: 0px 10px; background-color: rgb(76, 197, 150);">Month Search</button>
+              </div>
+            <div class ="column is-one-fifth">
+              <button id="clear-search" class="button is-warning" style="margin: 0px 10px;">Clear Results</button>
+
+            </div>
+             
+      </div>
+      <div class="card-list"></div>      
+    </div>
+  </section>
+
+
+  <ac-footer class="footer has-background-primary-dark" data-name="Matthew Jacobs" 
+  data-text="ACNH Completer" data-org="Nintendo">
+    <!-- Web component-->
+  </ac-footer>
+
+</body>
+</html>

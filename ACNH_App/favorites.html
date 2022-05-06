@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACNHC Favorites</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/default-styles.css"/>
+  <script src="src/init.js" type="module"></script>
+  <script src="src/fav.js" type="module"></script>
+</head>
+<body>
+  <ac-nav id="nav" data-here="Favorites"></ac-nav>
+
+
+  <ac-header id="header" class="title has-text-weight-light" data-name="Plucky" 
+  data-quote="“Haven't I seen this before? I swear I have… Oh well.”"></ac-header>
+
+  <!-- Favorites UI -->
+  <section class="section has-text-centered">
+    <div class="container" style="min-height: 100vh;">
+      <div class="column">
+        <h1 class="is-size-1 title">Favorites</h1>
+        <p style="margin: 20px 10px;"> Your favorites...
+        </p>
+        <button class="button is-warning" id="clear-btn">Clear</button>
+        <div class="card-list has-text-left"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <ac-footer class="footer has-background-primary-dark" data-name="Matthew Jacobs" 
+  data-text="ACNH Completer" data-org="Nintendo">
+    <!-- Web component-->
+  </ac-footer>
+</body>
+</html>

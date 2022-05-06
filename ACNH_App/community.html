@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACNHC Community</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <script src="src/init.js" type="module"></script>
+</head>
+
+<body>
+  <ac-nav id="nav" data-here="Community"></ac-nav>
+
+  <ac-header id="header" class="title has-text-weight-light" data-name="Plucky"
+    data-quote="“Haven't I seen this before? I swear I have… Oh well.”"></ac-header>
+
+  <!-- Community tab -->
+  <section class="section">
+    <div class="container" style="min-height: 100vh;">
+
+
+      <h1 class="is-size-1 title has-text-centered">Community</h1>
+      <h2 class="is-size-5 subtitle is-italic has-text-centered">See what others have been searching!</h2>
+      <div class="columns ">
+        <div class="column">
+          <div class="card large" style="margin: 10px;">
+            <div class="card-content" style="background-color: rgb(76, 197, 150);">
+              <div class="content">
+                <h2 class="is-size-3 title">Fish</h2>
+                <ul id="searchList">
+                  <li>No data yet!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card large" style="margin: 10px;">
+            <div class="card-content" style="background-color: rgb(76, 197, 150);">
+              <div class="content">
+                <h2 class="is-size-3 title">Locations</h2>
+                <ul id="locList">
+                  <li>No data yet!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card large" style="margin: 10px;">
+            <div class="card-content" style="background-color: rgb(76, 197, 150);">
+              <div class="content">
+                <h2 class="is-size-3 title">Months</h2>
+                <ul id="monthList">
+                  <li>No data yet!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <ac-footer class="footer has-background-primary-dark" data-name="Matthew Jacobs" data-text="ACNH Completer"
+    data-org="Nintendo">
+    <!-- Web component-->
+  </ac-footer>
+
+  <script type="module">
+    // Import firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+    import { getDatabase, ref, set, push, onValue } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
+
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAj4EgEBFMlSyDZetdmk0450ZDdS3Hr6vM",
+      authDomain: "accommunity-2582a.firebaseapp.com",
+      projectId: "accommunity-2582a",
+      storageBucket: "accommunity-2582a.appspot.com",
+      messagingSenderId: "887160556873",
+      appId: "1:887160556873:web:8993f66459cb0a14509e98"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    const searchesRef = ref(db, 'searches/');
+    const monthsRef = ref(db, 'months/')
+    const locRef = ref(db, 'location/')
+
+    // clears the no data part
+    document.querySelector("#searchList").innerHTML = '';
+    document.querySelector("#locList").innerHTML = '';
+    document.querySelector("#monthList").innerHTML = '';
+
+    // Snapshots changes to community page
+    const searchesChanged = (snapshot) => {
+      snapshot.forEach(search => {
+        const childKey = search.key;
+        const childData = search.val();
+
+        // Add data to list
+        const childShow = document.querySelector("#searchList");
+        childShow.innerHTML += `<li><b>${childData.name}</b> - Searches: ${childData.searches}</li>`;
+        console.log(childData);
+      });
+    }
+    const locChanged = (snapshot) => {
+      snapshot.forEach(search => {
+        const childKey = search.key;
+        const childData = search.val();
+
+        const childShow = document.querySelector("#locList");
+        childShow.innerHTML += `<li><b>${childData.loc}</b> - Searches: ${childData.searches}</li>`;
+        console.log(childData);
+      });
+    }
+    const monthChanged = (snapshot) => {
+      snapshot.forEach(search => {
+        const childKey = search.key;
+        const childData = search.val();
+
+        const childShow = document.querySelector("#monthList");
+        childShow.innerHTML += `<li><b>${childData.month}</b> - Searches: ${childData.searches}</li>`;
+        console.log(childData);
+      });
+    }
+
+    onValue(searchesRef, searchesChanged);
+    onValue(locRef, locChanged);
+    onValue(monthsRef, monthChanged);
+
+  </script>
+</body>
+
+</html>
