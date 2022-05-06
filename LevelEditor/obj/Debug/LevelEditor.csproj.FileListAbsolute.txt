@@ -1,0 +1,9 @@
+C:\Users\jessj\Desktop\Classes\Z_Old\gdaps2_2195_s2_NSA-master\LevelEditor\bin\Debug\LevelEditor.exe.config
+C:\Users\jessj\Desktop\Classes\Z_Old\gdaps2_2195_s2_NSA-master\LevelEditor\bin\Debug\LevelEditor.exe
+C:\Users\jessj\Desktop\Classes\Z_Old\gdaps2_2195_s2_NSA-master\LevelEditor\bin\Debug\LevelEditor.pdb
+C:\Users\jessj\Desktop\Classes\Z_Old\gdaps2_2195_s2_NSA-master\LevelEditor\obj\Debug\LevelEditor.csprojAssemblyReference.cache
+C:\Users\jessj\Desktop\Classes\Z_Old\gdaps2_2195_s2_NSA-master\LevelEditor\obj\Debug\LevelEditor.levelEditor.resources
+C:\Users\jessj\Desktop\Classes\Z_Old\gdaps2_2195_s2_NSA-master\LevelEditor\obj\Debug\LevelEditor.Properties.Resources.resources
+C:\Users\jessj\Desktop\Classes\Z_Old\gdaps2_2195_s2_NSA-master\LevelEditor\obj\Debug\LevelEditor.csproj.GenerateResource.cache
+C:\Users\jessj\Desktop\Classes\Z_Old\gdaps2_2195_s2_NSA-master\LevelEditor\obj\Debug\LevelEditor.exe
+C:\Users\jessj\Desktop\Classes\Z_Old\gdaps2_2195_s2_NSA-master\LevelEditor\obj\Debug\LevelEditor.pdb
