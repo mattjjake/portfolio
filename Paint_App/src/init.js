@@ -18,9 +18,9 @@ const init = () => {
     const url = "./data/presets.json";
     loadFile(url, jsonLoaded);
 
-    if (localStorage.getItem("jaj8571-p1-settings")) {
-        if (JSON.parse(localStorage.getItem("jaj8571-p1-settings")).mode) {
-          paintData.mode = JSON.parse(localStorage.getItem("jaj8571-p1-settings")).mode;
+    if (localStorage.getItem("jaj8571-p2-settings")) {
+        if (JSON.parse(localStorage.getItem("jaj8571-p2-settings")).mode) {
+          paintData.mode = JSON.parse(localStorage.getItem("jaj8571-p2-settings")).mode;
         }
     }
 };

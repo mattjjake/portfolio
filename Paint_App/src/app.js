@@ -48,12 +48,12 @@ const getTouch = (e) => {
 // Grabs local storage drawing and draw to screen
 const getStored = () => {
   // Test if storage is present first
-  if (localStorage.getItem("jaj8571-p1-settings")) {
-    if (JSON.parse(localStorage.getItem("jaj8571-p1-settings")).layersStore.length != 0) {
+  if (localStorage.getItem("jaj8571-p2-settings")) {
+    if (JSON.parse(localStorage.getItem("jaj8571-p2-settings")).layersStore.length != 0) {
 
       // Get data
-      paintData.layersStore = JSON.parse(localStorage.getItem("jaj8571-p1-settings")).layersStore;
-      paintData.layerNames = JSON.parse(localStorage.getItem("jaj8571-p1-settings")).layerNames;
+      paintData.layersStore = JSON.parse(localStorage.getItem("jaj8571-p2-settings")).layersStore;
+      paintData.layerNames = JSON.parse(localStorage.getItem("jaj8571-p2-settings")).layerNames;
 
       // Set initial main layer
       let img = new Image;
@@ -91,9 +91,9 @@ const getStored = () => {
 
 // Get name if present in local storage
 const getName = (num) => {
-  if (localStorage.getItem("jaj8571-p1-settings")) {
-    if (JSON.parse(localStorage.getItem("jaj8571-p1-settings")).layerNames) {
-      paintData.layerNames = JSON.parse(localStorage.getItem("jaj8571-p1-settings")).layerNames;
+  if (localStorage.getItem("jaj8571-p2-settings")) {
+    if (JSON.parse(localStorage.getItem("jaj8571-p2-settings")).layerNames) {
+      paintData.layerNames = JSON.parse(localStorage.getItem("jaj8571-p2-settings")).layerNames;
 
       return paintData.layerNames[num];
     }
@@ -120,7 +120,7 @@ export const saveState = () => {
     paintData.layerNames = paintData.layerNames.slice(0, paintData.layersStore.length);
   }
 
-  localStorage.setItem("jaj8571-p1-settings", JSON.stringify(paintData));
+  localStorage.setItem("jaj8571-p2-settings", JSON.stringify(paintData));
 }
 
 // Code sourced from:
