@@ -39,7 +39,7 @@ const getMouse = (evt) => {
 // Return touch position in local coordinates of canvas
 const getTouch = (e) => {
   const touch = {};
-  var bounds = canvas.getBoundingClientRect();
+  let bounds = canvas.getBoundingClientRect();
   touch.x = e.touches[0].clientX - bounds.left;
   touch.y = e.touches[0].clientY - bounds.top;
   return touch;
@@ -346,7 +346,8 @@ const doTouchmove = (e) => {
 // On ending the touch, stroke the tool
 const doTouchend = (e) => {
   e.preventDefault();
-
+  
+  let bounds = canvas.getBoundingClientRect();
   dragging = false;
   if (tool == "tool-line") {
     ctx.globalCompositeOperation = "source-over";
@@ -354,8 +355,8 @@ const doTouchend = (e) => {
     ctx.lineWidth = lineWidth;
     ctx.lineCap = lineCap;
     ctx.lineJoin = lineJoin;
-    ctx.lineTo(e.changedTouches[e.changedTouches.length - 1].pageX - BB.left,
-      e.changedTouches[e.changedTouches.length - 1].pageY - BB.top);
+    ctx.lineTo(e.changedTouches[e.changedTouches.length - 1].clientX - bounds.left,
+      e.changedTouches[e.changedTouches.length - 1].clientY - bounds.top);
     ctx.stroke();
   }
   else if (tool == "tool-rectangle") {
@@ -364,9 +365,9 @@ const doTouchend = (e) => {
     ctx.lineWidth = lineWidth;
     ctx.lineCap = lineCap;
     ctx.lineJoin = lineJoin;
-    ctx.lineTo(e.changedTouches[e.changedTouches.length - 1].pageX - BB.left, rectY);
-    ctx.lineTo(e.changedTouches[e.changedTouches.length - 1].pageX - BB.left, e.changedTouches[e.changedTouches.length - 1].pageY - BB.top);
-    ctx.lineTo(rectX, e.changedTouches[e.changedTouches.length - 1].pageY - BB.top);
+    ctx.lineTo(e.changedTouches[e.changedTouches.length - 1].clientX - bounds.left, rectY);
+    ctx.lineTo(e.changedTouches[e.changedTouches.length - 1].clientX - bounds.left, e.changedTouches[e.changedTouches.length - 1].clientY - bounds.top);
+    ctx.lineTo(rectX, e.changedTouches[e.changedTouches.length - 1].clientY - bounds.top);
     ctx.lineTo(rectX, rectY);
     ctx.stroke();
   }
