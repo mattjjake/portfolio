@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Paint App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Livvic&display=swap" rel="stylesheet">
+  <link href="styles/default-styles.css" type="text/css" rel="stylesheet">
+  <script src="src/init.js" type="module"></script>
+  <script src="src/app.js" type="module"></script>
+</head>
+
+<body>
+  <paint-nav id="nav" data-here="Application"></paint-nav>
+  
+  <div class="section">
+  <div class="columns">
+    <div class="column">
+
+
+
+      <div id="canvases">
+        <canvas id="main" width="700" height="500">
+
+        </canvas>
+        <canvas id="grid" width="700" height="500">
+
+        </canvas>
+      </div>
+
+      <div id="controls">
+        <!-- Tool Select -->
+        <label for="tool-chooser">Tool:</label>
+        <select id="tool-chooser">
+        </select>
+
+
+        <!-- Color Select -->
+        <input type="color" id="strokestyle-chooser">
+
+        <!-- Line Width Select -->
+        <label for="linewidth-chooser">Line Width:</label>
+        <input type="range" min="1" max="50" value="5" class="slider" id="linewidth-chooser">
+        <span id="slide-num"></span>
+
+        <!-- Extra button controls -->
+        <span><input class="button" id="btn-clear" type="button" value="Clear" /></span>
+
+        <!-- Exporting HTML, buttons and modal -->
+        <span><input class="button" id="btn-export" type="button" value="Export" /></span>
+        <div class="modal" id="export-modal" style="z-index: 52;">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Export Options</p>
+              <button class="delete" aria-label="close" id="btn-close"></button>
+            </header>
+            <section class="modal-card-body">
+              <!-- Content ... -->
+              <label for="file-chooser">File Type:</label>
+              <select id="file-chooser">
+                <option value="jpeg">jpeg</option>
+                <option value="png">png</option>
+                <option value="webp">webp</option>
+                <option value="bmp">bmp</option>
+              </select>
+              <label for="export-layers">Select Layer(s):</label>
+              <select id="export-layers">
+                <option value="all">Whole Canvas</option>
+                <option value="single">Only Selected Layer</option>
+                <option value="some">Multiple Layers</option>
+              </select>
+              <label for="input-ratio">Scale Ratio:
+              <input type="number" min="1" max="100" value="100" id="input-ratio"/>
+              <label for="input-ratio">%</label><br>
+              <label for="input-file-name">File Name:</label>
+              <input type="text" placeholder="Ex. My Drawing" id="input-file-name"/><br>
+
+              <p class="has-text-danger" id="char-warning" hidden>
+                Error! File name can not include characters #%&{}&lt;&gt;\*?/:@!$'"+=`|.
+              </p>
+              
+            </section>
+            <footer class="modal-card-foot">
+              <button class="button is-success" id="btn-confirm-export">Export</button>
+              <button class="button" id="btn-cancel">Cancel</button>
+            </footer>
+          </div>
+        </div>
+
+        <span><input class="button" id="btn-grid" type="button" value="Grid" /></span>
+        <span><input class="button" id="btn-layer" type="button" value="New Layer" /></span>
+        <span><input class="button" id="btn-size" type="button" value="Canvas Size" /></span>
+        <div class="modal" id="canvas-size" style="z-index: 52;">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Canvas Size</p>
+              <button class="delete" aria-label="close" id="btn-close-size"></button>
+            </header>
+            <section class="modal-card-body" id ="boop">
+              <!-- Content ... -->
+              <label for="input-width">Width:</label>
+              <input type="number" id="input-width" value ="700" min="1" max= "1000"/>
+              <label for="input-width">px</label>
+              <label for="input-height">Height:</label>
+              <input type="number" id="input-height" value ="500" min="1" max= "1000"/>
+              <label for="input-height">px</label>
+              <p class="has-text-danger" id="size-danger"></p>
+            </section>
+            <footer class="modal-card-foot">
+              <button class="button is-success" id="btn-create-size">Create</button>
+              <button class="button" id="btn-cancel-size">Cancel</button>
+            </footer>
+          </div>
+        </div>
+
+        <!--  Pen pressure toggle Select -->
+        <input type="checkbox" id="pen-pressure" name="pen-pressure" checked>
+        <label for="pen-pressure">Toggle Pen Pressure</label>
+
+        <!-- Dark Mode Select -->
+        <paint-mode id="dark-mode"></paint-mode>
+      </div>
+
+    </div>
+    <div class="column is-one-fifth" style="background-color: rgb(106, 144, 144);">
+      <h1 class="subtitle" id="layers-title">Layers</h1>
+
+        <div id="layers">
+
+        </div>
+
+      <div class="modal" id="over-layers" style="z-index: 52;">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Too Many Layers!</p>
+            <button class="delete" aria-label="close" id="btn-closeover"></button>
+          </header>
+          <section class="modal-card-body">
+            <!-- Content ... -->
+            <p class="has-text-danger">Layer count cannot exceed 8. Please delete some layers.</p>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button" id="btn-okay">Okay</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <paint-footer class="footer has-background-primary-dark" data-name="Matthew Jacobs" data-text="Paint App">
+  </paint-footer>
+
+</body>
+
+</html>

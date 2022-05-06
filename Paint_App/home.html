@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Livvic&display=swap" rel="stylesheet">
+    <link href="styles/default-styles.css" type="text/css" rel="stylesheet">
+    <script src="src/init.js" type="module"></script>
+</head>
+
+<body>
+    <paint-nav id="nav" data-here="Home"></paint-nav>
+
+    <div id="info" class="container" style="min-height: 100vh;">
+      <div class="columns is-vcentered">
+        <div class="column is-3 has-text-center">
+          <img src="images/paintbrush.png" alt="" class="px-1">
+        </div>
+        <div class="column is-5">
+          <h1 class="is-size-1 title">Paint App</h1>
+          <p>This page will serve as a simple drawing app for
+              digital artist's needs.
+          </p>
+          <p>
+            Namely, I wanted to offer a browser drawing application
+            that does basic necessities without having to have a 
+            downloaded application.
+          </p>
+        </div>
+        <div class="column is-4">
+          <h2 class="is-size-2 title">Developer</h2>
+          <div class="is-size-4 mb-4 subtitle">Matthew Jacobs</div>
+          <p class="mb-4">See the <a href="documentation.html">Documentation</a> tab for more info.</p>
+        </div>
+      </div>
+      <div style=" margin-left: auto;
+      margin-right: auto;
+      width: 8em;">
+        <paint-mode id="dark-mode"></paint-mode>
+    </div>
+    </div>
+
+
+    <paint-footer class="footer has-background-primary-dark" data-name="Matthew Jacobs" data-text="Paint App">
+    </paint-footer>
+</body>
+
+</html>

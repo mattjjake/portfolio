@@ -1,0 +1,77 @@
+body {
+    background: #eeeeee;
+    font-family: 'Livvic', sans-serif;
+}
+
+#canvases {
+    position: relative;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modal-card-body * {
+    margin: 5px;
+}
+
+#layers-title {
+    margin-top: 70px; 
+    text-align: center;
+}
+
+.section {
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+@media only screen and (max-width: 1000px){
+    #canvases {
+        overflow-x: scroll;
+        margin-bottom: 20px;
+    }
+    #layers-title {
+        margin-top: 10px; 
+    }
+    .section {
+        padding: 20px;
+    }
+    
+}
+
+#main {
+    background: #ffffff;
+    position: absolute;
+    z-index: 0;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#grid {
+    position: relative;
+    z-index: 50;
+}
+
+#controls {
+    text-align: center;
+    z-index: 1;
+    left: 25px;
+    top: 25px;
+}
+
+label {
+    font-size: 12px;
+    margin-right: 0.75em;
+}
+
+#info {
+    padding-top: 200px;
+}
+
+#info-doc {
+    padding-top: 100px;
+}
+
+p {
+    margin: 10px;
+}

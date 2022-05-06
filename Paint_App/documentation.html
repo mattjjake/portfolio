@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint Documentation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Livvic&display=swap" rel="stylesheet">
+    <link href="styles/default-styles.css" type="text/css" rel="stylesheet">
+    <script src="src/init.js" type="module"></script>
+</head>
+
+<body>
+    <paint-nav id="nav" data-here="Documentation"></paint-nav>
+
+    <div id="info-doc">
+        <div class="container" style="min-height: 100vh; padding: 50px; margin: 20px;">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <h2 class="is-size-3 subtitle">RESOURCES UTILIZED</h2>
+                    <p>
+                        <a href="https://bulma.io/documentation/">
+                            https://bulma.io/documentation/
+                        </a>
+                        <br>
+                        <a
+                            href="https://stackoverflow.com/questions/10970958/get-a-color-component-from-an-rgb-string-in-javascript">
+                            https://stackoverflow.com/questions/10970958/get-a-color-component-from-an-rgb-string-in-javascript
+                        </a>
+                        <br>
+                        <a href="https://css-tricks.com/converting-color-spaces-in-javascript/">
+                            https://css-tricks.com/converting-color-spaces-in-javascript/
+                        </a>
+                        <br>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">
+                            https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+                        </a>
+                        <br>
+                        <a href="https://stackoverflow.com/questions/17221802/canvas-eyedropper">
+                            https://stackoverflow.com/questions/17221802/canvas-eyedropper
+                        </a>
+                        <br>
+                        <a
+                            href="https://www.pngitem.com/middle/hmwRwbx_paintbrush-download-clip-art-paint-brush-png-transparent/">
+                            https://www.pngitem.com/middle/hmwRwbx_paintbrush-download-clip-art-paint-brush-png-transparent/
+                        </a>
+                        <br>
+                        <a href="http://clipart-library.com/clip-art/paintbrush-clipart-transparent-19.htm">
+                            http://clipart-library.com/clip-art/paintbrush-clipart-transparent-19.htm
+                        </a>
+                        <br>
+                        <a href="https://fonts.google.com/specimen/Livvic?query=livvic">
+                            https://fonts.google.com/specimen/Livvic?query=livvic
+                        </a>
+                    </p>
+                    <h2 class="is-size-3 subtitle">NOTEWORTHY</h2>
+                    <p>
+                        Using web components, bulma, fetch, promises, local storage, JSON, and
+                        Canvas API. Handling multiple layers/toggling in canvas, erasers and 
+                        different modes/tools, as well as mobile/tablet touch input (including pen pressure).
+                    </p>
+                </div>
+            </div>
+            <div style=" margin-left: auto;
+            margin-right: auto;
+            width: 8em;
+            margin-bottom: 20px;">
+              <paint-mode id="dark-mode"></paint-mode>
+          </div>
+        </div>
+        
+    </div>
+    <paint-footer class="footer has-background-primary-dark" data-name="Matthew Jacobs" data-text="Paint App">
+    </paint-footer>
+</body>
+
+</html>

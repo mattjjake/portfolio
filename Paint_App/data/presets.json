@@ -1,0 +1,10 @@
+{
+    "default": {
+        "chooser" : ["pencil", "eraser", "eyedropper", "line", "rectangle"],
+        "color": "#FF0000",
+        "canvas-size": {
+            "width": 700,
+            "height": 500
+        }
+    }
+}
